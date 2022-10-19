@@ -1,1 +1,38 @@
+// Write a program for greater number & call the garbage collection using System.gc
+package Wed_19OCT_GarbageCollection;
 
+import java.util.Scanner;
+
+public class Greater_no
+{
+	public void finalize()
+	{
+		System.out.println("here my gc method is call");
+	}
+
+	public static void main(String[] args) 
+	{
+		 Greater_no obj =new  Greater_no();
+		obj.greater_no();
+	    obj=null;
+		System.gc();
+	}
+	
+	public static void greater_no()
+	{
+		Scanner sc=new Scanner(System.in);
+		int a,b;
+		System.out.println("enter two value");
+		a=sc.nextInt();
+		b=sc.nextInt();
+		if(a>b)
+		{
+			System.out.println(a+ " is greater");
+		}
+		else
+		{
+			System.out.println(b+ " is greater ");
+		}
+	}
+
+}
